@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container mission-container">
+    <view class="top-container">
+        <view class="list-top">
+          <image class="top-bg" src="{{imgUrl}}/info_bg@{{pixelRatio}}x.png"/>
+          <view class="driver-container">
+             <block>
+                <view class="driver-item">
+                    <text class="driver-title">{{driverInfo.dept_name}}</text>
+                </view>
+                <view class="driver-item">
+                    <text class="driver-name">{{driverInfo.emp_name}}</text>
+                    <text class="driver-hi">司机,您好!</text>
+                </view>
+             </block>
+          </view>
+          <view class="status-container">
+           <image class="status-bg" src="{{imgUrl}}/state_bg@{{pixelRatio}}x.png"/>
+           <text class="status-text">运输中</text>
+          </view>
+          <view class="status-container logout-container" bindtap="logout">
+            <image class="status-bg" src="{{imgUrl}}/site_bg@{{pixelRatio}}x.png"/>
+           <text class="status-text">退出</text>
+          </view>
+        </view> 
+        <view class="list-title">
+         <text class="total-title">今日班次</text>
+         <text class="total-num">{{missions.length||0}}</text>
+        </view>
+    </view>
+    <view class="list-container">
+        <block>
+            <view class="list-content">
+             <shift-item wx:for="{{missions}}" item="{{item}}" wx:key="{{item.id}}" self-item="self-item" catch:todetail="toDetail" index="{{index}}"></shift-item>
+            </view>
+        </block>
+    </view>
+    <view>
+        <custom-tab-bar bindchange="handleChange" current="{{currentTabs}}"></custom-tab-bar>
+    </view>
+    <i-modal visible="{{isShowLogout}}" bindok="comfirmOut" bindcancel="cancelOut">
+        <text class="logout-text">确定要退出吗？</text>
+    </i-modal>
+</view>

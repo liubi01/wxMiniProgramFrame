@@ -1,0 +1,184 @@
+@import './_variable';
+// @px :font-size 设计稿除2
+.fontPxToRem(@px) {
+    font-size: calc(0.02rem * @px )
+}
+// // 背景图片
+.bg-image2(@url) {
+    background-image: url("@{url}@2x.png");
+    @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3) {
+      background-image: url("@{url}@3x.png");
+    }
+}
+// // 扩展点击区域
+ //父盒子static使用
+.extend-click() {
+    position: relative;
+    overflow: visible;
+    &:before {
+    //   background-color: rgba(222,222,222,0.5);
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+    }
+}
+// 父盒子为relative使用
+.extend-click2() {
+    overflow: visible;
+    &:before {
+    //   background-color: rgba(222,222,222,0.5);
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+    }
+  }
+  //  文字溢出
+  .ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .ellipsis2(){
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    /*! autoprefixer: off */ 
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 2; /** 显示的行数 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
+  }
+  .ellipsis1(){
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    /*! autoprefixer: off */ 
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 1; /** 显示的行数 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
+  }
+  //背景图
+.bg-image(@url) {
+    background-image: url(@url);
+    background-size: 100% 100%;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+  }
+.bg-center() {
+    background-size: 100% 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+// h($height){
+//  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+//    height:$height/2*3
+// }
+// // 不换行
+// no-wrap()
+//   text-overflow: ellipsis
+//   overflow: hidden
+//   white-space: nowrap
+
+// 上边框
+.bordertop-1px(@color){
+    position: relative;
+    &:after{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-top: 1px solid @color;
+        transform: scaleY(1);
+        content: ' ';
+        @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){
+            transform: scaleY(.5);
+        }
+        @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+            transform: scaleY(.4);
+        }
+    }
+}
+      
+// 下边框
+.borderbottom-1px(@color){
+    position: relative;
+    &:after{
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+       
+        border-top: 1px solid @color;
+        content: ' ';
+        @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){
+            transform: scaleY(.5);
+        }
+        @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+            transform: scaleY(.4);
+        }
+    }
+}
+// 右边框
+.borderright-1px(@color){
+    position: relative;
+    &:after{
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        height: 100%;
+        background-color: @color;
+        content: ' ';
+        // @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){
+        //     transform: scaleY(.5);
+        // }
+        // @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+        //     transform: scaleY(.4);
+        // }
+    }
+}
+//边框dash类型
+ .dashedborderbottom-1px(@color){
+     position: relative;
+     &:after{
+         display: block;
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         border-top: 1px dashed @color;
+         content: ' ';
+         @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){
+             transform: scaleY(.5);
+         }
+         @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3){
+             transform: scaleY(.4);
+         }
+     }
+ }
+.hairline() {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    transform: scale(.5);
+    transform-origin: 0 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    border: 0 solid @border-color-split;
+}
+  

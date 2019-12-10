@@ -1,0 +1,120 @@
+<!--pages/discharge-cargo/index.wxml-->
+<view class="container cargo-container">
+      <view class="cargo-title-box inner-container">
+             <image src="{{imgUrl}}/top_bg@{{pixelRatio}}x.png" class="cargo-title-box-image"/>
+             <view class="cargo-title-box-tips">
+                <image src="{{imgUrl}}/site_bg@{{pixelRatio}}x.png" class="cargo-title-box-tips-image"/>
+                <view class="cargo-title-box-tips-text">
+                     {{goodsTypeName}}站
+                </view>
+             </view>
+             <view class="cargo-title-box-content">
+                  <view class="cargo-title-box-content-num">
+                      {{goodsType == 1?siteDetailInfo.getNum:siteDetailInfo.castNum }}
+                  </view>
+                  <view class="cargo-title-box-content-tips">
+                      待{{goodsTypeName}}
+                  </view>
+             </view>
+             
+             <view class="cargo-title-box-outer-address inner-container">
+                    <view class="cargo-title-box-address">
+                        <view class="cargo-title-box-address-title">
+                          {{siteDetailInfo.deptName}}
+                        </view>
+                        <view class="cargo-title-box-address-detail">
+                            {{siteDetailInfo.address}}
+                        </view>
+                        <view class="cargo-title-box-address-tel">
+                                <view class="cargo-title-box-address-tel-num">
+                                   电话：{{siteDetailInfo.tel}}
+                                </view>
+                                <view class="cargo-title-box-address-tel-logo">
+                                <image src="{{imgUrl}}/phone_logo@{{pixelRatio}}x.png"  bindtap="callPhone"/>
+                            </view>
+                        </view>
+                    </view>
+             </view>
+      </view>
+      <view class="cargo-content-box inner-container">
+            <view class="cargo-scan-box">
+                 <view class="cargo-scan-box-left">
+                     <view class="cargo-scan-box-left-inner" bindtap="scan">
+                           <image src="{{imgUrl}}/scan_logo@{{pixelRatio}}x.png"/>
+                           <view class="cargo-scan-box-left-inner-text">
+                                扫描{{goodsTypeName}}
+                           </view>
+                     </view>
+                 </view>
+                 <view class="cargo-scan-box-right" bindtap="handInput">
+                      手输条码
+                 </view>
+            </view> 
+            <view class="cargo-list-box">
+                 <view class="cargo-list-box-title">
+                       <view class="cargo-list-box-title-left {{!loadingOrNot?'cargo-list-box-title-select':''}}" bindtap="changeLoadingBox" data-type="false">
+                           待{{goodsTypeName}}清单
+                           <text class="cargo-list-box-title-num">({{wGoodsList.length}})</text>
+                       </view>
+                       <view class="cargo-list-box-title-right {{loadingOrNot?'cargo-list-box-title-select':''}}" bindtap="changeLoadingBox" data-type="true">
+                           已{{goodsTypeName}}清单
+                            <text class="cargo-list-box-title-num">({{goodsList.length}})</text>
+                       </view>
+                 </view>
+                 <view class="outer-items" wx:if="{{!loadingOrNot}}">
+                 <view class="cargo-list-box-items" wx:if="{{wGoodsList.length>0}}">
+                     <view class="cargo-list-box-item" wx:for="{{wGoodsList}}" wx:key="{{index}}" animation="{{ currentDelIndex==item.barCode&&fadeOutUp}}">
+                       <view class="cargo-list-box-item-left"> 
+                              <view class="cargo-list-box-item-left-no"> 
+                              {{item.barCode}}
+                              </view>
+                              <view class="cargo-list-box-item-left-address">
+                                发往：{{item.pickupLocation}}
+                              </view>
+                       </view>
+                       <view class="cargo-list-box-item-right-text" bindtap="addGoodsItem" data-key="{{index}}"> 
+                            <text>{{goodsTypeName}}</text>
+                       </view>
+                     </view>
+                 </view>
+                 <view class="cargo-list-box-items" wx:else >
+                     <view class="cargo-list-box-item {{wGoodsList.length==0?'cargo-list-box-item-no':''}}">
+                          暂无待{{goodsTypeName}}记录~
+                     </view>
+                 </view>
+                 </view>
+                 <view class="outer-items" wx:else>
+                 <view class="cargo-list-box-items" wx:if="{{goodsList.length>0}}">
+                     <view class="cargo-list-box-item" wx:for="{{goodsList}}" wx:key="{{index}}" animation="{{ currentDelIndex==item.barCode&&fadeOutUp}}">
+                       <view class="cargo-list-box-item-left"> 
+                              <view class="cargo-list-box-item-left-no"> 
+                              {{item.barCode}}
+                              </view>
+                              <view class="cargo-list-box-item-left-address">
+                                发往：{{item.pickupLocation}}
+                              </view>
+                       </view>
+                       <view class="cargo-list-box-item-right" bindtap="delGoodsItem" data-key="{{index}}"> 
+                            <image src="{{imgUrl}}/del_btn@{{pixelRatio}}x.png"/>
+                       </view>
+                     </view>
+                 </view>
+                 <view class="cargo-list-box-items" wx:else>
+                     <view class="cargo-list-box-item {{goodsList.length==0?'cargo-list-box-item-no':''}}">
+                          暂无已{{goodsTypeName}}记录~
+                     </view>
+                 </view>
+                 </view>
+            </view>   
+      </view>
+      <i-modal visible="{{showHandDialog}}" bindok="checkCode" bindcancel="cancelCheckCode">
+         <view class="inner">
+           <view class="inner-title">
+                输入{{goodsTypeName}}条码
+           </view>
+           <input value="{{code}}" data-name='code' bindinput="updateValue" bindblur="trim" class="inner-input-code"/>
+         </view>
+      </i-modal>
+      <bottom status="{{bottomStatus}}" bindchange="nextStep"></bottom>
+      <i-message id="message"></i-message>
+</view>    

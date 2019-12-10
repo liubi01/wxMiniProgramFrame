@@ -1,0 +1,35 @@
+<!--components/cargo-btn/index.wxml-->
+<view class="cargo-btn self-item {{type===2?'cargo-ship-btn':''}}" bindtap="tapEvent"> 
+      <view class="cargo-btn-left" wx:if="{{item.status!=2&&item.status!=3}}">
+          <view class="cargo-btn-left-title">
+             {{type===1?"待装货":"待卸货"}}
+          </view>
+          <view class="cargo-btn-left-num">
+             {{type===1?item.getNum:item.castNum}}
+          </view>
+          <view class="cargo-btn-left-tips">
+             件
+          </view>
+      </view>
+      <view class="cargo-btn-left" wx:else>
+          <view class="cargo-btn-left-title">
+             {{type===1?"已装货":"已卸货"}}
+          </view>
+          <view class="cargo-btn-left-num">
+             {{type===1?item.alreadyLoading:item.alreadyUnloading}}
+          </view>
+          <view class="cargo-btn-left-tips">
+             件
+          </view>
+      </view>
+      <view class="cargo-btn-right {{iscomplete?'cargo-btn-right-complete':''}}">
+           <view class="cargo-btn-right-logo" wx:if="{{!iscomplete}}">
+              >
+           </view>
+           <view class="cargo-btn-right-complete-logo" wx:else>
+           <image src="{{imgUrl}}/ok_logo@{{pixelRatio}}x.png" />
+           </view>
+      </view>
+</view>
+<i-message id="message"></i-message>
+<i-modal></i-modal>

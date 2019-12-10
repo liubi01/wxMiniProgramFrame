@@ -1,0 +1,16 @@
+<view class="toast-mask" wx:if="{{ visible && mask }}" bindtap="handleHide"></view>
+<view class="self-item toast" wx:if="{{ visible }}">
+    <block wx:if="{{ type !== 'default' }}">
+        <view class="toast-type">
+            <icon i-class="toast-icon" type="success" wx:if="{{ type === 'success' }}"></icon>
+            <icon i-class="toast-icon" type="prompt" wx:elif="{{ type === 'warning' }}"></icon>
+            <icon i-class="toast-icon" type="delete" wx:elif="{{ type === 'error' }}"></icon>
+            <view class="toast-icon toast-loading" wx:elif="{{ type === 'loading' }}"></view>
+        </view>
+    </block>
+    <block wx:else>
+        <icon i-class="toast-icon" type="{{ icon }}" wx:if="{{ icon }}"></icon>
+        <image class="toast-image" src="{{ image }}" wx:if="{{ image }}" mode="aspectFit"></image>
+    </block>
+    <view class="toast-content" wx:if="{{ content }}">{{ content }}</view>
+</view>

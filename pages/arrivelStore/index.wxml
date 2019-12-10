@@ -1,0 +1,44 @@
+<!--pages/arrivelStore/index.wxml-->
+<view class="container arrivel-container">
+     <view class="inner-container arrivel-top">
+     <title title="{{detail}}"></title>
+     </view>
+     <view class="inner-container arrivel-content">
+     <destination type="2" item="{{detail}}"></destination>
+        <view class="arrviel-content-cargo">
+          <cargo-btn type="2" self-item="self-item-cargo" bindchange="dischargeCargo" bindloading="unloaded" iscomplete="{{detail.castNum==0}}" item="{{detail}}" wx:if="{{orderNum !=0}}"></cargo-btn>
+          <cargo-btn type="1" self-item="self-item-cargo" bindchange="shipCargo" bindloading="loaded" iscomplete="{{detail.getNum==0}}" item="{{detail}}"></cargo-btn>
+        </view>
+     </view>
+     <i-modal visible="{{showCodeDialog}}" bindok="checkCode" bindcancel="cancelCheckCode">
+         <view class="inner">
+           <view class="inner-title">
+                输入物流验证码
+           </view>
+           <input value="{{code}}" data-name='code' bindinput="updateValue" bindblur="trim" class="inner-input-code"/>
+         </view>
+      </i-modal>
+
+    <i-modal visible="{{showLoadedDialog}}" bindok="confirmChecked" bindcancel="confirmChecked" type="{{2}}" title="{{loadName+'清单'}}">
+        <view class="loaded-inner">
+            <view class="cargo-list-box-items">
+                <view class="cargo-list-box-item" wx:for="{{goodsList}}" wx:key="{{index}}">
+                    <view style="text-align: left; border-bottom: 1px solid #eee; padding: 5px">
+                        <view class="cargo-list-box-item-left-no">
+                            {{item.barCode}}
+                        </view>
+                        <view class="cargo-list-box-item-left-address">
+                            发：{{item.pickupLocation}}
+                        </view>
+                    </view>
+                </view>
+                <view style="text-align: right;padding:0 5px">
+                    {{loadName}}总数：{{goodsList.length}} 件
+                </view>
+            </view>
+        </view>
+    </i-modal>
+
+     <i-message id="message"></i-message>
+     <bottom status="{{bottomStatus}}" bindchange="nextStep"></bottom>
+</view>

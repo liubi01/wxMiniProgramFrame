@@ -1,0 +1,52 @@
+@import '../../assets/styles/_mixin.less';
+@import '../../assets/styles/_variable.less';
+.cargo-btn{
+    background-color: #fff;
+    border-radius:10rpx;
+    width: 100%;
+    height: 146rpx;
+    display: flex;
+    padding:50rpx 30rpx;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    &-left{
+        display: flex;
+        align-items: center;
+        &-title{
+            font-size: 38rpx;
+        }
+        &-num{
+            margin:0 20rpx;
+            font-size: 48rpx;
+            color:@bg_red;
+        }
+        &-tips{
+            font-size: 28rpx;
+        }
+    }
+    &-right{
+        font-size: 48rpx;
+        color: @font_black;
+        &-complete{
+           &-logo{
+            position: absolute;
+            right:10rpx;
+            top:0;
+            width: 162rpx;
+            height: 125rpx;
+            image{
+                width: 100%;
+                height: 100%;
+            }
+           }
+        }
+    }
+}
+.cargo-ship-btn{
+    .cargo-btn-left{
+        &-num{
+            color:@font_yellow;
+        }
+    }
+}

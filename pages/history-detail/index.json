@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "shift-item":"../../components/shift-item/index",
+    "steps":"../../components/steps/index",
+    "step":"../../components/step/index"
+  },
+  "navigationBarTitleText":"班次查询"
+}

@@ -1,0 +1,7 @@
+<!--components/custom-tab-bar/index.wxml-->
+<view class="bottom-tabs">
+        <view class="tabs-left {{current==item.key?'select':''}}" bindtap="handleClickItem" data-key="{{item.key}}" wx:for="{{list}}" wx:key="{{item.key}}">
+        {{item.name}}
+        </view>
+ 
+</view>

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "destination":"../../components/destination/index",
+    "title":"../../components/title/index",
+    "cargo-btn":"../../components/cargo-btn/index",
+    "i-modal":"../../components/modal/index",
+    "i-message": "../../components/message/index",
+    "bottom":"../../components/bottom/index"
+  },
+  "navigationBarTitleText":"班次查询"
+}

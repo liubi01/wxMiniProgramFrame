@@ -1,0 +1,1 @@
+page{height:100%;width:100%}.shift-container{padding:20rpx 30rpx 114rpx;background-color:#eee;min-height:100%}.shift-container .shift-item{border-left:6rpx solid #f44336;height:250rpx}.shift-container .shift-distination{margin-top:26rpx}.shift-container .shift-route{margin-top:26rpx}

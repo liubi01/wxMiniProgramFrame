@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "bottom":"../../components/bottom/index",
+    "i-modal":"../../components/modal/index",
+    "i-message": "../../components/message/index"
+  },
+  "navigationBarTitleText":"卸货"
+}

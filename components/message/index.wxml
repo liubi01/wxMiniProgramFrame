@@ -1,0 +1,3 @@
+<view class="self-item message message-{{type}} {{ visible ? 'message-show' : '' }}">
+    {{ content }}
+</view>

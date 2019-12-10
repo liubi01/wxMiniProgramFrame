@@ -1,0 +1,43 @@
+
+@import '../../assets/styles/_mixin.less';
+@import '../../assets/styles/_variable.less';
+.tabs-tab{
+    flex: 1;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    &-bar{
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: transparent;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: @bg_red;
+    }
+
+    &-title{
+        font-size: @font_base_size;
+        text-align: center;
+        box-sizing: border-box;
+        color: @font_black;
+
+        &-current{
+            color: @bg_red;
+        }
+    }
+
+    &-scroll{
+        display: inline-block;
+        width: 60rpx;
+    }
+}

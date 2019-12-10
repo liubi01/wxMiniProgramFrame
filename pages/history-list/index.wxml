@@ -1,0 +1,14 @@
+<!--pages/route-detail/index.wxml-->
+<view class="container">
+    <view class="top-tabs">
+        <tabs current="{{ currentSelect }}" color="#f44336" bindchange="handleSelectChange" fixed="{{true}}">
+        <tab key="{{item.key}}" title="{{item.name}}" wx:for="{{titleList}}" wx:key="{{item.key}}"></tab>
+       </tabs>
+    </view>
+    <view class="list-container">
+        <view class="list-content">
+        <shift-item wx:for="{{tableData}}" item="{{item}}" wx:key="{{item.name}}" self-item="self-item" catch:todetail="toDetail" ></shift-item>
+        </view>
+    </view>
+    <custom-tab-bar bindchange="handleChange" current="{{currentTabs}}"></custom-tab-bar>
+</view>

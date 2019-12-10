@@ -1,0 +1,30 @@
+@import '../../assets/styles/_mixin.less';
+@import '../../assets/styles/_variable.less';
+.bottom-tabs{
+    position: fixed;
+    bottom:0;
+    left:0;
+    background-color: #fff;
+    // line-height: 94rpx;
+    height: 94rpx;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 32rpx;
+    color:@font_black;
+    .tabs-left{
+        flex:1;
+        height: 45rpx;
+        line-height: 45rpx;
+        .borderright-1px(@border_grey); 
+    }
+    .tabs-right{
+        flex:1;
+        height: 45rpx;
+        line-height: 45rpx;
+    }
+    .select{
+        color:@bg_red;
+    }
+}

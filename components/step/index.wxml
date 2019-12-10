@@ -1,0 +1,53 @@
+<!--components/step/index.wxml-->
+<view class="self-class step-item {{parse.getClass(len,current,index,item)}}" bindtap="stepClick">
+      <view class="step-item-ico">
+            <view class="step-item-circle">
+            </view>
+            <view class="step-item-line" wx:if="{{ index !== len - 1}}">    
+            </view>
+            <view class="step-item-ico-bg">
+            </view>
+      </view>
+      <view class="step-item-main">
+            <view class="main-left">
+                 <view class="main-left-title">
+                    {{item.siteName}}
+                 </view>
+                 <view class="main-left-tips">
+                   <view class="main-left-no" wx:if="{{!item.getNum&&!item.castNum&&!item.alreadyLoading&&!item.alreadyUnloading}}">
+                       无件
+                   </view>
+                   <view class="main-left-child" wx:if="{{item.children&&item.children.length>0}}">
+                     <view class="main-left-child-name" wx:for="{{item.children}}" wx:for-item="itemData" wx:key="{{index}}">
+                      {{itemData.siteName}}
+                     </view>
+                    </view>
+                 </view>
+            </view>
+            <view class="main-right">
+                 <image src="{{imgUrl}}/express_car@{{pixelRatio}}x.png"/>
+            </view>
+      </view>
+</view>
+<wxs module="parse">
+   module.exports = {
+        getClass : function(len,current,index,item){
+        var class = '';
+        var baseClass="step-item";
+        if(index==current){
+            class = baseClass+"-now";
+        }
+        if(index < current){
+            class = baseClass+"-process"
+        }
+        if(index==current&&(item.status==2||item.status==3)){
+            //配送状态。0未开始 1已到店 2已离开 3跳过状态
+            class = baseClass+"-wait"
+        }
+        // if(index==++current&&(item.status==0)){
+        //     class = baseClass+'-wait-site'
+        // }
+        return class
+        }
+   }
+</wxs>

@@ -1,0 +1,27 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+     <view class="login-top">
+         <image src="{{imgUrl}}/login_bg@{{pixelRatio}}x.png"/>
+     </view>
+     <view class="login-container">
+          <view class="login-content"> 
+               <form bindsubmit="formSubmit">
+                    <block>
+                        <text class="login-title">账号</text>
+                        <input class="login-input" type="text" placeholder="请输入ERP账号" auto-focus value="{{userInfo.userName}}"     
+                        bindinput="updateValue"
+                        bindblur="trim"
+                        data-name='userInfo.userName' />
+                    </block>
+                    <block>
+                        <text class="login-title">密码</text>
+                        <input class="login-input" value="{{userInfo.password}}" data-name='userInfo.password'  placeholder="请输入密码" bindinput="updateValue" bindblur="trim" password/>
+                    </block>
+                    <block>
+                        <button type="default" bindtap="loginTap" hover-class="defaultTap" class="login-btn">登录</button>
+                    </block>
+               </form>
+          </view>
+     </view>
+</view>
+

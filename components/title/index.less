@@ -1,0 +1,70 @@
+@import '../../assets/styles/_mixin.less';
+@import '../../assets/styles/_variable.less';
+.list-top{
+    width: 100%;
+    height: 250rpx;
+    position: relative;
+    padding:20rpx 0 12rpx 28rpx;
+    color:white;
+    image.top-bg{
+       position: absolute;
+       left: 0;
+       top:0;
+       z-index: 0;
+       width: 100%;
+       height: 100%;
+       .bg-center();
+    }
+    .driver-container{
+        position: relative;
+        margin-right: 132rpx;
+        height: 100%;
+        .driver-title{
+            line-height: 44rpx;
+            height: 44rpx;
+            font-size: 30rpx;
+            font-weight: 700;
+        }
+        .driver-route{
+            font-weight: 700;
+            height: 72rpx;
+            line-height: 72rpx;
+        }
+        .driver-item-bottom{
+            margin-top: 22rpx;
+            font-size: 24rpx;
+            &-time{
+                line-height: 36rpx;
+                height: 36rpx;
+            }
+            &-site{
+                line-height: 34rpx;
+                height: 34rpx;
+            }
+        }
+    }
+    .status-container{
+        position: absolute;
+        z-index: 0;
+        width: 140rpx;
+        height: 50rpx;
+        bottom:40rpx;
+        right: -8rpx;
+        .status-text{
+            width: 100%;
+            height: 50rpx;
+            position: absolute;
+            color:white;
+            font-size: 28rpx;
+            line-height: 50rpx;
+            left: 17rpx;
+        }
+        image.status-bg{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            .bg-center();
+
+        }
+    }
+}

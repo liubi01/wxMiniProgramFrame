@@ -1,0 +1,196 @@
+@import '../../assets/styles/_mixin.less';
+@import '../../assets/styles/_variable.less';
+.step-item{
+    display: flex;
+    &-ico{
+        position: relative;
+        width: 100rpx;
+        height: 90rpx;
+        flex:0 0 100rpx;
+        &-bg{
+            width: 50%;
+            height: 100%;
+            float: right;
+            background-color: @font_yellow;
+            opacity: 0.12;
+            display: none;
+        }
+    }
+    &-line{
+        position: absolute;
+        background-color: @border_grey;
+        width: 2px;
+        height: 100%;
+        top:50%;
+        left:0;
+        right:0;
+        margin:0 auto;
+        z-index: 0;
+    }
+    &-circle{
+        position: absolute;
+        background-color: @border_grey;
+        width: 12rpx;
+        height: 12rpx;
+        border-radius: 50%;
+        margin:auto;
+        border-color:@border_grey;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        margin:auto;
+        z-index: 1;
+    }
+    &-main{
+         flex: 1 1 auto;
+         height: 90rpx;
+         line-height: 90rpx;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding-right: 30rpx;
+         position: relative;
+         .ellipsis();
+         .dashedborderbottom-1px(@border_grey);
+         .main-left{
+            display: flex;
+            align-items: center;
+            flex: 0 0 auto;
+            height: 100%;
+            justify-content: flex-start;
+            .ellipsis();
+            &-title{
+                 flex:0 0 auto;
+                 font-size: 28rpx;
+                 color:@font_black;
+                 line-height: 77rpx;
+                 vertical-align: middle;
+                 max-width: 130px;
+                 .ellipsis();
+            }
+            &-tips{
+                align-items: center;
+                display: flex;
+                height: 100%;
+                flex:1 1 auto;
+                .ellipsis();
+            }
+            &-no{
+                vertical-align: middle;
+                flex:0 0 76rpx;
+                margin-left: 11rpx;
+                width: 76rpx;
+                height: 37rpx;
+                text-align: center;
+                line-height: 37rpx;
+                font-size: 26rpx;
+                color:#fff;
+                background-color: @bg_deep_grey;
+            }
+            &-child{
+                vertical-align: middle;
+                height: 100%;
+                .ellipsis();
+                // width: calc(100% - 76rpx);
+                &-name{
+                     float: left;
+                     font-size: 24rpx;
+                     color:@font_black;
+                     position: relative;
+                     margin-left: 28rpx;
+                     &::before{
+                        content:'';
+                        display: block;
+                        position: absolute;
+                        left:-10rpx;
+                        width: 8rpx;
+                        height: 8rpx;
+                        background-color: @font_black;
+                        top:0;
+                        bottom:0;
+                        margin:auto;
+                     }
+                 }
+            }
+         }
+         .main-right{
+             display: none;
+             position: absolute;
+             width: 58rpx;
+             right:0rpx;
+             top:0;
+             bottom:0;
+             z-index: 10;
+             margin: auto;
+             height:30rpx;
+             line-height: 30rpx;
+             background-color: #fff;
+             image{
+                 width: 38rpx;
+                 height: 28rpx;
+             }
+         }
+    }
+    &-process{
+      .step-item-circle{
+          background-color: @bg_red;
+          border-color:@bg_red;
+      }
+      .step-item-line{
+        background-color: @bg_red;
+    }
+    }
+    &-now{
+        .step-item-circle{
+          background-color: #fff;
+          border:1px solid @bg_red;
+          width: 25rpx;
+          height: 25rpx;
+        //   position: relative;
+          &:after{
+            content:"";
+            display: block;
+            width: 15rpx;
+            height: 15rpx;
+            background-color: @bg_red;
+            position: absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            top:0;
+            margin: auto;
+            border-radius: 50%;
+            z-index: 1;
+          }
+        }
+        .step-item-main{
+            background-color: @font_small_yellow;
+            .main-left{
+                &-title{
+                    color:@bg_red;
+                }
+            }
+            .main-right{
+                display: block;
+                background-color: @font_small_yellow;
+            }
+        }
+        .step-item-ico-bg{
+            display: block;
+        }
+    }
+    &-wait{
+        .step-item-circle{
+            background-color: @bg_red;
+        }
+        .step-item-line{
+            background-color: @font_yellow;
+        }
+        &-site{
+            .step-item-circle{
+                background-color: @font_yellow;
+            }
+        }
+    }
+}

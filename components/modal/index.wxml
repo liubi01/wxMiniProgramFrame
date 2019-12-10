@@ -1,0 +1,18 @@
+<!--components/modal/index.wxml-->
+<view class="i-modal-mask i-class-mask {{ visible ? 'i-modal-mask-show' : '' }}"></view>
+<view class="i-class i-modal {{ visible ? 'i-modal-show' : ''}} {{type==2?'i-modal-list':''}}">
+      <view class="i-modal-main">
+            <view class="i-modal-content">
+                    <view class="i-modal-title" wx:if="{{ title }}">{{ title }}
+                     <view class="i-modal-close-btn" wx:if="{{type==2}}" bindtap="closeBtn">
+                           <image src="{{imgUrl}}/del.png"/>
+                     </view>
+                    </view>
+                    <view class="i-modal-body {{type==2?'i-modal-list-body':''}}"><slot></slot></view>
+                    <view class="i-modal-actions" wx:if="{{type!=2}}">
+                          <button class="i-modal-btn i-modal-btn-cancel" plain="true" bindtap="handleClickCancel" hover-class="i-btn-hover">{{ cancelText }}</button>
+                          <button class="i-modal-btn i-modal-btn-ok" plain="true" bindtap="handleClickOk" hover-class="i-btn-hover">{{ okText }}</button>
+                    </view>
+            </view>
+      </view>
+</view>

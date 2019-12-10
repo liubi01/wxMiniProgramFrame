@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "shift-item":"../../components/shift-item/index",
+    "destination":"../../components/destination/index",
+    "bottom":"../../components/bottom/index",
+    "steps":"../../components/steps/index",
+    "step":"../../components/step/index"
+  }
+}

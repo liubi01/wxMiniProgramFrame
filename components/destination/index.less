@@ -1,0 +1,97 @@
+@import '../../assets/styles/_mixin.less';
+@import '../../assets/styles/_variable.less';
+.dest-container{
+    height: 250rpx;
+    padding:28rpx 26rpx 30rpx 16rpx;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    border-radius: 10rpx;
+    .dest-left{
+        flex: 0 0 150rpx;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        display: flex;
+        .borderright-1px(@border_grey);
+        &-image{
+            width: 46rpx;
+            height: 57rpx;
+            .bg-center();
+        }
+        &-tips{
+           margin-top: 16rpx;
+           color:@font_deep_grey;
+           font-size: 24rpx;
+        }
+    }
+    .dest-right{
+        flex:1 1 auto;
+        width: 0;
+        padding: 0 42rpx 0 18rpx;
+        line-height: 50rpx;
+        color:@font_black;
+        font-size: @font_base_size;
+        position: relative;
+        &-top{
+            flex:0 0 auto;
+            .ellipsis();
+        }
+        &-middle{
+            height:100rpx;
+            .ellipsis2();
+        }
+        &-bottom{
+            display: flex;
+            justify-content: space-between;
+            &-deliver{
+                display: flex;
+                &-text{
+                    color:@bg_red;
+                }
+            }
+            &-take{
+                display: flex;
+                &-text{
+                   color:@font_yellow;
+                }
+            }
+            &-tel{
+                vertical-align: middle;
+                font-size: 28rpx;
+            }
+            &-tellogo{
+                vertical-align: middle;
+                width: 32rpx;
+                height: 32rpx;
+                .bg-center();
+                .extend-click();
+            }
+        }
+        &-image{
+            width: 32rpx;
+            height: 32rpx;
+            .bg-center();
+            position: absolute;
+            top:0;
+            right:0;
+            .extend-click2();
+        }
+    }
+}
+.dest-arrivel-container{
+    .dest-right{
+        &-top{
+            font-size: 32rpx;
+        }
+        &-middle{
+            font-size: 30rpx;
+        }
+        &-bottom{
+            font-size: 28rpx;
+            align-items:center;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<view class="list-item self-item {{index==0?'margin-b-0':''}}" bindtap="toDetail">
+    <view class="list-item-top fsp">
+        <view class="list-item-top-left">{{item.scheduleSn}}</view>
+        <view class="list-item-top-right">
+        计划发车时间：{{item.plannedStartTime}}
+        </view>
+    </view>
+    <view class="list-item-middle">
+        <view class="list-item-middle-text">
+        {{item.routeName}}
+        </view>
+    </view>
+    <view class="list-item-bottom fsp">
+        <view class="list-item-bottom-left">站点：{{item.siteNum}}个</view>
+        <view class="list-item-bottom-right {{item.status==0?'no-start':item.status==1?'':item.status==2?'':item.status==3?'is-ok':''}}">
+            {{item.status==0?"未开始":item.status==1? "准备中":item.status==2?"运输中":item.status==3?"已完成":""}}
+        </view>
+    </view>
+ </view>

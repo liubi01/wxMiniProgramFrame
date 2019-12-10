@@ -1,0 +1,14 @@
+<!--pages/shiftDetail/index.wxml-->
+<view class="shift-container">
+    <shift-item item="{{topItem}}" wx:key="{{item.name}}" self-item="shift-item" index="{{index}}"></shift-item>
+    <view class="shift-distination">
+         <destination item="{{infoTitle}}" current="{{currentSiteIndex}}"></destination>
+    </view>
+    <view class="shift-route">
+        <steps current="{{currentSiteIndex}}" bindstepclick="stepClick">
+            <step wx:for="{{routeList}}" wx:key="{{index}}" 
+            item="{{item}}"></step>
+        </steps>
+    </view>
+    <bottom status="{{currentStatus}}" bindchange="nextStep"></bottom>
+</view>

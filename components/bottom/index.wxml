@@ -1,0 +1,6 @@
+<!--components/bottom/index.wxml-->
+<view class="shift-bottom" wx:if="{{isShow}}">
+        <view class="shift-btn" bindtap="nextStep">
+             {{currentName}}
+        </view>
+</view>

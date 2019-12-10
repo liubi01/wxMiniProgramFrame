@@ -1,0 +1,122 @@
+
+@import '../../assets/styles/_mixin.less';
+@import '../../assets/styles/_variable.less';
+page{
+    height: 100%;
+    width: 100%;
+}
+.mission-container{
+    background-color: @bg_normal_grey;
+    width: 100%;
+    .top-container{
+        padding:20rpx 30rpx 0;
+        position: fixed;
+        left: 0;
+        top:0;
+        width: 100%;
+        background-color: @bg_normal_grey;
+    }
+    .list-top{
+        width: 100%;
+        height: 215rpx;
+        position: relative;
+        padding:34rpx 0 48rpx 28rpx;
+        color:white;
+        image.top-bg{
+           position: absolute;
+           left: 0;
+           top:0;
+           z-index: 0;
+           width: 100%;
+           height: 100%;
+           .bg-center();
+        }
+        .driver-container{
+            position: relative;
+            margin-right: 132rpx;
+            height: 100%;
+            .driver-title{
+                line-height: 44rpx;
+                height: 44rpx;
+                font-size: 28rpx;
+            }
+            .driver-item:nth-child(2){
+                margin-top: 20rpx;
+            }
+            .driver-name{
+                line-height: 62rpx;
+                height: 62rpx;
+                font-size: 42rpx;
+            }
+            .driver-hi{
+                margin-left: 12rpx;
+                line-height: 62rpx;
+                height: 62rpx;
+                font-size: 36rpx;
+            }
+        }
+        .status-container{
+            position: absolute;
+            z-index: 0;
+            width: 140rpx;
+            height: 50rpx;
+            bottom:38rpx;
+            right: -8rpx;
+            color:white;
+            .status-text{
+                width: 100%;
+                height: 50rpx;
+                position: absolute;
+                font-size: 28rpx;
+                line-height: 50rpx;
+                left: 17rpx;
+            }
+            image.status-bg{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                .bg-center();
+    
+            }
+        }
+        .logout-container{
+            position: absolute;
+            z-index: 0;
+            top:34rpx;
+            color:@font_black;
+            opacity: 0.9;
+            .status-text{
+                left: 0;
+                text-align: center;
+            }
+        }
+    }
+    .list-title{
+        height: 74rpx;
+        line-height: 74rpx;
+        .total-title{
+            font-size: 28rpx;
+            color:@font_black;
+        }
+        .total-num{
+            font-size: 32rpx;
+            color:@bg_red;
+            margin-left: 10rpx;
+        }
+    }
+    .list-container{
+        width: 100%;
+        padding:300rpx 30rpx 114rpx;
+        background-color: @bg_normal_grey;
+        .list-content{
+          
+        }
+    }
+    .self-item{
+        margin-bottom: 30rpx;
+    }
+    .logout-text{
+        height: 80rpx;
+        line-height: 80rpx;
+    }
+}

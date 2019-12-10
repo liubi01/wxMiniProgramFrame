@@ -1,0 +1,32 @@
+<!--components/destination/index.wxml-->
+<view class="dest-container {{type==2?'dest-arrivel-container':''}}">
+      <view class="dest-left">
+            <image src="{{imgUrl}}/nav_logo@{{pixelRatio}}x.png" class="dest-left-image" wx:if="{{type==1}}"/>
+            <text class="dest-left-tips">{{type==1?"当前目的地":item.status==1?"已到店":item.status==2?"已离店":item.status==0?"":"已跳过"}} </text>
+      </view>
+      <view class="dest-right">
+            <view class="dest-right-top">
+                {{item.siteName}}
+            </view>
+            <view class="dest-right-middle">
+                {{item.address}}
+            </view>
+            <view class="dest-right-bottom" wx:if="{{type==1}}">
+                <view class="dest-right-bottom-deliver">
+                    {{current===1?"待投":"待投"}} : <view class="dest-right-bottom-deliver-text">
+                    {{item.castNum}}</view> 件
+                </view> 
+                <view class="dest-right-bottom-take">
+                    {{current===1?"待领":"待领"}} : <view class="dest-right-bottom-take-text">
+                    {{item.getNum}}</view> 件
+                </view>
+            </view>
+            <view class="dest-right-bottom" wx:else >
+                 <view class="dest-right-bottom-tel">
+                    电话：{{item.tel}}
+                 </view>
+                <image src="{{imgUrl}}/phone_logo@{{pixelRatio}}x.png" class="dest-right-bottom-tellogo" bindtap="call"/>
+            </view>
+            <image src="{{imgUrl}}/phone_logo@{{pixelRatio}}x.png" class="dest-right-image" wx:if="{{type==1}}" bindtap="call"/>
+      </view>
+</view>

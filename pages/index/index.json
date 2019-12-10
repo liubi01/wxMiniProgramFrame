@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "custom-tab-bar":"../../components/custom-tab-bar/index",
+    "shift-item":"../../components/shift-item/index",
+    "i-modal":"../../components/modal/index"
+  },
+  "navigationBarTitleText":"创业印章 物流系统"
+}
