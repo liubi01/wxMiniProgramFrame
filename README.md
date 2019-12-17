@@ -16,7 +16,22 @@
 ...
 --- 
 ## 目录结构
- waiting...
+ ```
+wxMiniProgramFrame
+|—— assets
+     |—— image      //本地图片(通过配置文件可改为网络地址,小程序上传限制2.49m 推荐网络地址)
+     |—— styles
+|—— build           //gulp构建地址
+|—— components      //公共组件
+|—— config          //配置文件
+|—— mixins          //公共方法(类似双向数据绑定的方法...)
+|—— pages           //路由文件、业务代码
+|—— services        //接口请求api
+|—— utils           //公共方法(加密等..)
+|—— .gitignore
+|—— .app.js         //token的续期
+|—— ...
+```
 ## 使用
 1. 
 ```bash
