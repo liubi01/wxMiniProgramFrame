@@ -9,7 +9,7 @@
 3. [input的双向数据绑定(讨巧的方法)](https://github.com/liubi01/wxMiniProgramFrame/blob/master/mixins/commonMixin.js#L2)
 4. [token的续期](https://github.com/liubi01/wxMiniProgramFrame/blob/master/app.js#L103)
 5. [请求的promise封装](https://github.com/liubi01/wxMiniProgramFrame/blob/master/utils/req.js#L96)
-6. aes加密
+6. [aes加密](https://github.com/liubi01/wxMiniProgramFrame/blob/master/utils/util.js#L37)
 7. [配置文件](https://github.com/liubi01/wxMiniProgramFrame/tree/master/config)
 ### 未实现功能：
 1. 静默登录
@@ -31,7 +31,7 @@
 ### 小程序开发工具
 1. 本地开发关闭https校验
 2. 开启es5转换
-### 您需修改配置文件
+### 需修改配置文件
 1. config目录下 -- api.js
 ```bash
    const Config = require('./config.js');
