@@ -7,7 +7,7 @@
 1. less的使用
 2. 公共组件，公共样式（通过app全局设置pixelRatio变量实现@2x与@3x背景图的切换）
 3. [input的双向数据绑定(讨巧的方法)](https://github.com/liubi01/wxMiniProgramFrame/blob/master/mixins/commonMixin.js#L2)
-4. token的续期(https://github.com/liubi01/wxMiniProgramFrame/blob/master/app.js#L103)
+4. [token的续期](https://github.com/liubi01/wxMiniProgramFrame/blob/master/app.js#L103)
 5. [请求的promise封装](https://github.com/liubi01/wxMiniProgramFrame/blob/master/utils/req.js#L96)
 6. aes加密
 7. [配置文件](https://github.com/liubi01/wxMiniProgramFrame/tree/master/config)
