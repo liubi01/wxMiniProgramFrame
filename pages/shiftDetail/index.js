@@ -51,6 +51,9 @@ Page({
         }
       })
       this.setData({ 'currentData': data.outH5ScheduleSiteInfos[this.data.currentSiteIndex] })
+      // if (this.data.currentSiteIndex && (this.data.currentSiteIndex == data.outH5ScheduleSiteInfos.length - 1) || ((this.data.currentSiteIndex == data.outH5ScheduleSiteInfos.length - 2) && (this.data.currentData.status == 2 || this.data.currentData.status == 3))) {//最后一个
+      //   this.setData({ 'isLast': true });
+      // }
       if (!this.data.currentData.isLast) {
         this.setData({ 'nextSiteIndex': ++tempIndex })
         //目的地

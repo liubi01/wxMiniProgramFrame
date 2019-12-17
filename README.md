@@ -18,6 +18,7 @@
 ## 目录结构
  waiting...
 ## 使用
+1. 
 ```bash
    # install dependencies 
    $ npm i # or npm install 
@@ -25,6 +26,8 @@
    # run 
    $ npm run dev
 ```
+2. tips:在路由/组件同级文件加下直接创建.less文件，将自动创建wxss同级文件 
+
 ### 小程序开发工具
 1. 本地开发关闭https校验
 2. 开启es5转换
