@@ -51,9 +51,6 @@ Page({
         }
       })
       this.setData({ 'currentData': data.outH5ScheduleSiteInfos[this.data.currentSiteIndex] })
-      // if (this.data.currentSiteIndex && (this.data.currentSiteIndex == data.outH5ScheduleSiteInfos.length - 1) || ((this.data.currentSiteIndex == data.outH5ScheduleSiteInfos.length - 2) && (this.data.currentData.status == 2 || this.data.currentData.status == 3))) {//最后一个
-      //   this.setData({ 'isLast': true });
-      // }
       if (!this.data.currentData.isLast) {
         this.setData({ 'nextSiteIndex': ++tempIndex })
         //目的地
@@ -80,14 +77,6 @@ Page({
       if (this.data.currentData.status == 1 || (this.data.currentData.isLast && this.data.currentData.status == 2)) {
         this.setData({ 'currentStatus': 9 });
       }
-      // //不展示 当前站点-到店-有货待完成
-      // if (this.data.currentSiteIndex != 0 && (this.data.currentData.getNum != 0 || this.data.currentData.castNum != 0) && this.data.currentData.status == 1) {
-      //   this.setData({ 'currentStatus': 9 });
-      // }
-      // //中间无件站点跳过
-      // if (this.data.currentSiteIndex != 0 && this.data.currentData.getNum == 0 && this.data.currentData.castNum == 0 && this.data.currentData.status != 3) {
-      //   this.setData({ 'currentStatus': 5 });
-      // }
       //站点路线
       this.setData({ 'routeList': data.outH5ScheduleSiteInfos });
     })

@@ -53,10 +53,6 @@ Page(Object.assign({
   //装货
   shipCargo: function (e) {
     this.setData({ 'goodsType': e.detail.type })
-    // if (!this.data.detail.isVerification && this.data.orderNum != 0) {
-    //   this.setData({ 'showCodeDialog': true });
-    // } else {
-    // }
     this.toOperatePage();
   },
   //已装货
@@ -142,12 +138,6 @@ Page(Object.assign({
     if (this.data.isLast == 'true') {
       this.setData({ 'bottomStatus': 6 });
     }
-    // this.setData({ 'bottomStatus':  });
-    // this.setData({ 'allComplete': false });//路线是否全部完成
-    // if (this.data.detail.castNum == 0 && this.data.detail.getNum == 0) {
-    // } else {
-    //   this.setData({ 'allComplete': false });
-    // }
   },
   cancelCheckCode() {
     this.changeCodeDialog();
@@ -190,36 +180,5 @@ Page(Object.assign({
         url: '/pages/shiftDetail/index?routeId=' + this.data.scheduleId
       });
     })
-    // switch (btnStatus) {
-    //   case 2:
-    //     data = {
-    //       "currentSiteIndex": this.data.orderNum,
-    //       "scheduleId": this.data.scheduleId,
-    //       "siteId": this.data.siteId,
-    //       "status": 2
-    //     };
-    //     Schedule.updatedSchedule(data).then(res => {
-    //       wx.navigateTo({
-    //         url: '/pages/shiftDetail/index?routeId=' + this.data.scheduleId
-    //       });
-    //     })
-    //     break;
-    //   case 4:
-    //     data = {
-    //       "currentSiteIndex": this.data.orderNum,
-    //       "scheduleId": this.data.scheduleId,
-    //       "siteId": this.data.siteId,
-    //       "status": 4
-    //     };
-    //     Schedule.updatedSchedule(data).then(res => {
-    //       wx.navigateTo({
-    //         url: '/pages/shiftDetail/index?routeId=' + this.data.scheduleId
-    //       });
-    //     })
-    //     break;
-    // }
-    // case 6:
-
-    console.log(e.detail.currentStatus);
   }
 }, commonMixin))
