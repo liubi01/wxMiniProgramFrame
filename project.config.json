@@ -32,7 +32,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.8.3",
-	"appid": "wx266d983e751034dd",
+	"appid": "",
 	"projectname": "wx",
 	"debugOptions": {
 		"hidedInDevtools": []
